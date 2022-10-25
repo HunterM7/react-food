@@ -1,0 +1,58 @@
+//? == NavList ==
+
+@import '../../../styles/vars';
+
+.list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	&__item {
+		font-family: 'Source Serif 4', sans-serif;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+
+		padding: 1rem;
+
+		cursor: pointer;
+	}
+
+	&.active {
+		width: 100%;
+		height: 100vh;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		transition: $Trans-medium;
+
+		background-color: rgba($Black, 0.8);
+
+		z-index: 5000;
+
+		.list__item {
+			font-size: 2rem;
+			color: $Light;
+			transition: transform $Trans-fast, color $Trans-fast;
+
+			&:hover {
+				color: $Primary-color;
+
+				transform: scale(1.2);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.list {
+		position: absolute;
+		right: -200%;
+	}
+}
