@@ -1,11 +1,12 @@
 import React from 'react'
 
+import styles from './Navbar.module.scss'
+
+import NavList from './NavList/NavList'
+
 import { GiHamburger } from 'react-icons/gi'
 import { GoThreeBars } from 'react-icons/go'
 import { FaTimes } from 'react-icons/fa'
-
-import styles from './Navbar.module.scss'
-import NavList from './NavList/NavList'
 
 const Navbar = () => {
 	const [isPopupOpen, setIsPopupOpen] =
@@ -28,7 +29,11 @@ const Navbar = () => {
 					className={styles.hamburger}
 					onClick={handlePopup}
 				>
-					{isPopupOpen ? <FaTimes /> : <GoThreeBars />}
+					{isPopupOpen ? (
+						<FaTimes style={{ color: '#fff' }} />
+					) : (
+						<GoThreeBars style={{ color: '#000' }} />
+					)}
 				</div>
 			</div>
 		</div>

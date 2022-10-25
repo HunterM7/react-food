@@ -1,0 +1,46 @@
+//? == Hero ==
+
+@import '../../styles/vars';
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+
+	background: url('../../assets/images/hero.jpg') center / cover
+		no-repeat;
+}
+
+.container {
+	display: block;
+	max-width: 1240px;
+	height: 100%;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.content {
+	padding-left: 2rem;
+
+	border-left: 10px solid $Black;
+}
+
+.text {
+	font-size: 1.5rem;
+
+	margin-bottom: 10px;
+}
+
+.title {
+	margin-bottom: 10px;
+}
+
+button {
+	min-width: 100px;
+
+	&:not(:last-of-type) {
+		margin-right: 1rem;
+	}
+}
