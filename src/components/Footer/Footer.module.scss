@@ -1,0 +1,49 @@
+//? == Footer ==
+
+@import '../../styles/vars';
+
+.footer {
+	width: 100%;
+
+	padding: 6rem 1rem;
+
+	background: url('../../assets/images/footer.jpg') center / cover
+		no-repeat;
+}
+
+.container {
+	max-width: 1240px;
+
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	@media screen and (max-width: 1040px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.col {
+	display: grid;
+	justify-content: center;
+	align-content: start;
+
+	@media screen and (max-width: 1040px) {
+		justify-content: start;
+	}
+
+	p {
+		color: $Light2;
+		text-transform: uppercase;
+
+		padding: 0.4rem 0;
+	}
+
+	svg {
+		font-size: 2rem;
+		color: $Primary-color;
+
+		margin: 0.5rem 1rem 0 0;
+	}
+}

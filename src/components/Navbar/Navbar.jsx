@@ -11,13 +11,28 @@ import { FaTimes } from 'react-icons/fa'
 const Navbar = () => {
 	const [isPopupOpen, setIsPopupOpen] =
 		React.useState(false)
+	const [color, setColor] = React.useState(false)
 
 	const handlePopup = () => {
 		setIsPopupOpen(!isPopupOpen)
 	}
 
+	const changeColor = () => {
+		if (window.scrollY >= 100) {
+			setColor(true)
+		} else {
+			setColor(false)
+		}
+	}
+
+	window.addEventListener('scroll', changeColor)
+
 	return (
-		<div className={styles.wrapper}>
+		<div
+			className={`${styles.wrapper} ${
+				color ? styles['wrapper--bg'] : ''
+			}`}
+		>
 			<div className={`container ${styles.container}`}>
 				<div className={styles.logo}>
 					<GiHamburger />
@@ -32,7 +47,7 @@ const Navbar = () => {
 					{isPopupOpen ? (
 						<FaTimes style={{ color: '#fff' }} />
 					) : (
-						<GoThreeBars style={{ color: '#000' }} />
+						<GoThreeBars />
 					)}
 				</div>
 			</div>

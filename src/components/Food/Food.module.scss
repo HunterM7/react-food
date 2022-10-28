@@ -1,0 +1,27 @@
+//? == Food ==
+
+@import '../../styles/vars';
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	@media screen and (max-width: 740px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.wrapper,
+.block {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
